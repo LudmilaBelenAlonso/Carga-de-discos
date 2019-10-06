@@ -4,7 +4,7 @@
 
 
 // Variables:
-var c = console.log, aDiscos=[];
+var c = console.log, aDiscos=[], aCNU=[];
     
 
 // Funciones:
@@ -39,7 +39,8 @@ function Disco(){
     this.PedirCNU = function (){
         do {
             cnu = parseInt(prompt('Por favor ingrese el código numérico del disco ingresado =) Gracias!'));
-        } while (!(cnu >= 0 && cnu <= 9999))
+        } while (!CNUvalido(cnu))
+        aCNU.push(cnu);
     }
     
     this.LeerCNU =  function () {
@@ -56,12 +57,31 @@ function Disco(){
         r += '<h3>Autor o Banda: ' + autor + '</h3>'
 		r += '<ol>';
 		for (var i = 0; i < pistas.length; i++) {
-			r += '<li>' + pistas[i].ArmarPista() + '</li>';
+			//r += '<li>' + 
+            r += pistas[i].ArmarPista(); + '</li>';
 		}
 		r += '</ol>';
 		return r;
     }
 }
+
+function CNUvalido(cnu){
+    //private variable
+    var control = true;
+    
+    //validation cicle CNU
+    if (!(cnu > 0 && cnu <= 9999)){
+        control = false;
+        alert ('Está ingresando un código incorrecto, el código esta compuesto solo por hasta cuatro digitos y debe ser mayor a cero');
+    }  
+    if (!(aCNU.indexOf(cnu) == -1)){
+        contro = false;
+        alert ('El código ingresado ya se encuentra registrado, por favor intentelo nuevamente')
+    }
+    
+    return control;
+    
+}   
     
 function Pista(){
        //private variables
@@ -90,8 +110,11 @@ function Pista(){
        }
        
        this.ArmarPista = function (){
-           var r = '';
-           r += 'Pista: ' + track + ' - duración: ' + time;
+           var r = '<li style="color: ';
+        {
+             r += (time > 180 ? 'red':'')+ '">' + 'Pista: ' + track + ' - duración: ' + time ; 
+           }
+           //r +=  'Pista: ' + track + ' - duración: ' + time ;
            return r;
        }
 }
