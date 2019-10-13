@@ -1,26 +1,5 @@
-/**
- *	Versión 1.0.5
- *	-------------
- *	+	Ajustes de herencia en todas los estilos.
- *	+	Ajustes de la etiqueta img.
- *	+	Creada la clase .separador.
- */
-@charset "utf-8";
-
-/**
- *	Fonts
- */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
-
-/**
- *	First Mobile
- */
-
-/**	General */
-html {
-	box-sizing: border-box;
-}
+/**	General 
+*/
 
 *, *:before, *:after {
 	box-sizing: inherit;
@@ -29,15 +8,16 @@ html {
 * {
 	margin: 0;
 	padding: 0;
+    box-sizing: border-box;
 	font-size: 10px;
 	line-height: 1;
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 }
 
 /**	Body */
 body {
-	background-color: #D4EAF3;
+	background-color: #ffff;
 }
 
 /**	Header */
@@ -47,24 +27,16 @@ header {
 	justify-content: center;
 	align-items: center;
 	padding: 2em 4em;
-	background-color: #1A4A5E;
+	background-color: #0f1932;
 }
 
 header > h1 {
-	font-family: 'Montserrat';
 	font-size: 3.2em;
 	line-height: 1.5;
-	font-weight: 700;
 	text-align: center;
-	color: #D4EAF3;
+	color: #f851e2;
 }
 
-header > h1 > span {
-	font-family: 'Montserrat';
-	font-size: 1em;
-	font-weight: 400;
-	color: #4A9B82;
-}
 
 /**	Main */
 main {
@@ -76,29 +48,27 @@ main {
 	padding: 2em 4em;
 }
 
-main p {
-	font-size: 2.4em;
-	line-height: 1.5;
-	font-weight: 400;
+p, span, 
+ol, ul, 
+h2, h3 {
+    padding: 0.1vw;
+}
+
+p {
+	font-size: 2.3em;
 	text-align: left;
-	color: #1A4A5E;
+	color: #0f1932;
 }
 
-main p b, 
-main p i,
-main p span {
-	font-size: 1em;
-}
-
-main p b {
-	font-weight: 700;
+span {
+    font-size: 1.2em;
+    color: #f851e2;
 }
 
 main ul,
 main ol {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
 	align-items: flex-start;
 	width: 100%;
 }
@@ -110,21 +80,11 @@ main ol li {
 	line-height: 1.5;
 	font-weight: 400;
 	text-align: left;
-	color: #1A4A5E;
+	color: #0f1932;
 }
 
-main ul li b,
-main ul li i,
-main ul li span,
-main ol li b,
-main ol li i,
-main ol li span {
-	font-size: 1em;
-}
-
-main ul li b,
-main ol li b {
-	font-weight: 700;
+ul {
+    list-style: none;
 }
 
 main button {
@@ -132,56 +92,41 @@ main button {
 	border-radius: 5px;
 	border: none;
 	padding: .5em 1em;
-	background-color: #1A4A5E;
+	background-color: #0f1932;
 	cursor: pointer;
 	font-size: 2.4em;
 	line-height: 1.5;
 	font-weight: 400;
 	text-align: center;
-	color: #4A9B82;
+	color: #f851e2;
 }
 
 main button:hover {
-	background-color: #4A9B82;
-	color: #1A4A5E;
+	background-color: #f851e2;
+	color: #0f1932;
 }
 
-main h2 {
-	font-family: 'Montserrat';
+h2 {
 	font-size: 2.8em;
 	line-height: 1.5;
 	font-weight: 700;
 	text-align: left;
-	color: #1A4A5E;
+	color: #0f1932;
 }
 
-main img {
-	max-width: 80%;
+div h3 {
+	font-size: 2.4em;
+	font-weight: 700;
+	text-align: left;
+	color: #0f1932;
 }
 
-.solucion,
-.solucion p,
-.solucion li {
-	width: 100%;
-	word-wrap: break-word;
-	color: #4A9B82;
+div {
+    border: 2px solid #0f1932;
+    margin: 1vw 0;
 }
 
-.separador {
-	margin: 2em 0;
-}
 
-div.galeria {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-}
-
-div.galeria img {
-	margin: 1em;
-}
 
 /**	Footer */
 footer {
@@ -193,7 +138,7 @@ footer {
 	align-items: center;
 	width: 100%;
 	padding: 2em 4em;
-	background-color: #1A4A5E;
+	background-color: #0f1932;
 }
 
 footer ul {
@@ -206,19 +151,17 @@ footer ul {
 }
 
 footer ul li {
-	font-family: 'Montserrat';
 	font-size: 1.6em;
 	line-height: 1.5;
 	font-weight: 400;
 	text-align: center;
-	color: #D4EAF3;
+	color: #f851e2;
 }
 
-footer ul li a {
-	font-family: 'Montserrat';
+footer a {
 	font-size: 1em;
 	text-decoration: none;
-	color: #D4EAF3;
+	color: #f851e2;
 }
 
 footer ul li a:hover {
@@ -242,3 +185,4 @@ footer ul li a:hover {
 	}
 
 }
+
